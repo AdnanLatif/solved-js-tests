@@ -7,4 +7,4 @@ Array.prototype.myMap = function(callback) {
 }
 
 
-console.log([1,2,3,4].myMap(a => +a))
+console.log([1,2,3,4].myMap(a => a*2))

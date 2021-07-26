@@ -1,23 +1,16 @@
-Array.prototype.myReduce = function(callback, accumulator) {
+Array.prototype.myReduce = function(callback) {
     if(this.length < 1) {
         throw new Error("Array is Empty")
     }
 
-    if(!accumulator) {
-        if(typeof this[0] === "string") {
-            accumulator = '';
-        } else if(typeof this[0] === "number") {
-            accumulator = 0;
-        }
+    var a =0;                              
+    for(let i=0; i<this.length; i++) {
+        callback(a = a + this[i])           
     }
-
-    for(let index=0; index < this.length; index++) {
-        accumulator = callback(accumulator, this[index]);
-    }
-    return accumulator;
+    return a;
 }
 
 const names = ['Adnan', 'Imran', 'Arslan'];
 
-const statment = names.myReduce((acc, ele) => acc + ele);
+const statment = names.myReduce((acc, ele) => acc + ' ' + ele);
 console.log(statment); // Adnan Imran Arslan
