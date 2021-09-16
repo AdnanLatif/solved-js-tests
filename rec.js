@@ -1,6 +1,5 @@
 
 const timesFunc = (repeatTimes, repeatItem, repeated) => {
-    console.log(typeof repeated)
       if(repeatTimes === 0) {
           return repeated
       }
